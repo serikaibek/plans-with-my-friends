@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d9f06a">
+  <title>Идеи для выходных — Выходные вместе</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="ideas-page" data-page="ideas">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Выходные вместе, главная"><span class="brand-spark">✳</span> ВЫХОДНЫЕ<br><span class="wordmark-indent">ВМЕСТЕ</span></a>
+    <nav class="main-nav" aria-label="Главная навигация">
+      <a class="nav-link" href="index.html">Обзор</a><a class="nav-link active" href="ideas.html">Идеи</a><a class="nav-link" href="plan.html">Наш план <span class="nav-count" data-plan-count>0</span></a>
+    </nav>
+    <a class="header-cta" href="plan.html">К плану <span aria-hidden="true">↗</span></a>
+  </header>
+  <main class="page-shell ideas-shell">
+    <section class="ideas-heading">
+      <div><p class="eyebrow"><span class="live-dot"></span> БАНК ИДЕЙ · ГОЛОСУЙТЕ ВМЕСТЕ</p><h1>Выбираем<br><span>приключение.</span></h1></div>
+      <p class="ideas-lede">От «выйти за кофе» до «а давайте уедем за город». Ставьте сердечки и добавляйте фаворитов в общий план.</p>
+      <div class="ideas-doodle" aria-hidden="true">↙<br><span>ваш ход!</span></div>
+    </section>
+    <div class="filter-bar" role="group" aria-label="Фильтр идей">
+      <span class="filter-label">НАСТРОЕНИЕ</span>
+      <button class="filter-chip selected" type="button" data-filter="all" aria-pressed="true">Все идеи</button>
+      <button class="filter-chip" type="button" data-filter="outside" aria-pressed="false">На улице</button>
+      <button class="filter-chip" type="button" data-filter="food" aria-pressed="false">Вкусно</button>
+      <button class="filter-chip" type="button" data-filter="chill" aria-pressed="false">Спокойно</button>
+      <span class="filter-spacer"></span><span class="idea-total"><b data-idea-total>6</b> вариантов</span>
+    </div>
+    <section class="idea-grid" aria-label="Подборка занятий">
+      <article class="idea-card idea-orange" data-category="outside">
+        <div class="idea-image image-market" role="img" aria-label="Осенний рынок с цветами и продуктами"><span class="image-tag">СВЕЖИЙ ВОЗДУХ</span><button class="vote-button" type="button" aria-label="Проголосовать за прогулку по рынку" aria-pressed="false">♡ <span data-votes>3</span></button></div>
+        <div class="idea-info"><div class="idea-meta"><span>СУББОТА · 11:00</span><span>↗ НА УЛИЦЕ</span></div><h2>Завтрак на рынке</h2><p>Берём кофе, пробуем всё подряд и выбираем самый красивый букет.</p><button class="add-idea" type="button" data-add-idea="Завтрак на рынке" data-time="Суббота, 11:00">Добавить в план <span>+</span></button></div>
+      </article>
+      <article class="idea-card idea-blue" data-category="food">
+        <div class="idea-image image-picnic" role="img" aria-label="Пикник с друзьями в парке"><span class="image-tag">ДОЛГО ОБЕДАТЬ</span><button class="vote-button" type="button" aria-label="Проголосовать за пикник в парке" aria-pressed="false">♡ <span data-votes>5</span></button></div>
+        <div class="idea-info"><div class="idea-meta"><span>СУББОТА · 13:00</span><span>↗ ВКУСНО</span></div><h2>Пикник без повода</h2><p>Каждый приносит что-то своё. Главное правило: еды должно остаться.</p><button class="add-idea" type="button" data-add-idea="Пикник без повода" data-time="Суббота, 13:00">Добавить в план <span>+</span></button></div>
+      </article>
+      <article class="idea-card idea-pink" data-category="chill">
+        <div class="idea-image image-pottery" role="img" aria-label="Мастерская керамики и гончарный круг"><span class="image-tag">ПРОБУЕМ НОВОЕ</span><button class="vote-button" type="button" aria-label="Проголосовать за мастер-класс по керамике" aria-pressed="false">♡ <span data-votes>2</span></button></div>
+        <div class="idea-info"><div class="idea-meta"><span>СУББОТА · 16:00</span><span>↗ СПОКОЙНО</span></div><h2>Лепим что получится</h2><p>Керамическая мастерская, глина под ногтями и кружка мечты.</p><button class="add-idea" type="button" data-add-idea="Мастер-класс по керамике" data-time="Суббота, 16:00">Добавить в план <span>+</span></button></div>
+      </article>
+      <article class="idea-card idea-lilac" data-category="outside">
+        <div class="idea-image image-bike" role="img" aria-label="Велопрогулка по дорожке в зелёном парке"><span class="image-tag">НЕМНОГО ДВИЖЕНИЯ</span><button class="vote-button" type="button" aria-label="Проголосовать за велопрогулку" aria-pressed="false">♡ <span data-votes>4</span></button></div>
+        <div class="idea-info"><div class="idea-meta"><span>ВОСКРЕСЕНЬЕ · 10:30</span><span>↗ НА УЛИЦЕ</span></div><h2>Велики и без маршрута</h2><p>Едем куда глаза глядят, останавливаемся на лимонад.</p><button class="add-idea" type="button" data-add-idea="Велопрогулка без маршрута" data-time="Воскресенье, 10:30">Добавить в план <span>+</span></button></div>
+      </article>
+      <article class="idea-card idea-yellow" data-category="food">
+        <div class="idea-image image-pasta" role="img" aria-label="Домашняя паста, которую готовят всей компанией"><span class="image-tag">ПО ГОТОВКЕ!</span><button class="vote-button" type="button" aria-label="Проголосовать за домашний ужин" aria-pressed="false">♡ <span data-votes>1</span></button></div>
+        <div class="idea-info"><div class="idea-meta"><span>СУББОТА · 19:00</span><span>↗ ВКУСНО</span></div><h2>Ужин, который готовим сами</h2><p>Большая миска пасты, любимая музыка и никто не смотрит на часы.</p><button class="add-idea" type="button" data-add-idea="Домашний ужин" data-time="Суббота, 19:00">Добавить в план <span>+</span></button></div>
+      </article>
+      <article class="idea-card idea-green" data-category="chill">
+        <div class="idea-image image-movie" role="img" aria-label="Уютный кинопросмотр с попкорном дома"><span class="image-tag">НИКУДА НЕ СПЕШИТЬ</span><button class="vote-button" type="button" aria-label="Проголосовать за домашний киновечер" aria-pressed="false">♡ <span data-votes>2</span></button></div>
+        <div class="idea-info"><div class="idea-meta"><span>ВОСКРЕСЕНЬЕ · 18:00</span><span>↗ СПОКОЙНО</span></div><h2>Киновечер по заявкам</h2><p>Каждый предлагает фильм. Проигравший голосование делает попкорн.</p><button class="add-idea" type="button" data-add-idea="Киновечер по заявкам" data-time="Воскресенье, 18:00">Добавить в план <span>+</span></button></div>
+      </article>
+    </section>
+    <footer class="ideas-footer"><span>ИДЕЯ НРАВИТСЯ? ДОБАВЛЯЙ ЕЁ В ПЛАН</span><a href="plan.html">К нашему маршруту <b>↗</b></a></footer>
+  </main>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

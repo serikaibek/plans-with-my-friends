@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5a88b">
+  <title>Наш план — Выходные вместе</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="plan-page" data-page="plan">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Выходные вместе, главная"><span class="brand-spark">✳</span> ВЫХОДНЫЕ<br><span class="wordmark-indent">ВМЕСТЕ</span></a>
+    <nav class="main-nav" aria-label="Главная навигация">
+      <a class="nav-link" href="index.html">Обзор</a><a class="nav-link" href="ideas.html">Идеи</a><a class="nav-link active" href="plan.html">Наш план <span class="nav-count" data-plan-count>0</span></a>
+    </nav>
+    <a class="header-cta" href="ideas.html">Добавить идею <span aria-hidden="true">+</span></a>
+  </header>
+  <main class="page-shell plan-shell">
+    <section class="plan-top">
+      <div><p class="eyebrow"><span class="live-dot"></span> ОБЩИЙ МАРШРУТ · <span data-weekend-range></span></p><h1>План,<br><span>а не переписка.</span></h1><label class="weekend-picker" for="weekend-start">Выбрать субботу <input id="weekend-start" type="date" data-weekend-start></label></div>
+      <div class="plan-aside"><span class="sun-mark" aria-hidden="true">☼</span><p>Всё, что выбрали вместе, в одном месте. Можно добавить свой пункт прямо сюда.</p><div class="mini-friends" data-mini-friends></div></div>
+    </section>
+    <section class="plan-layout">
+      <div class="itinerary-panel">
+        <div class="itinerary-heading"><h2>Наш маршрут</h2><div class="itinerary-actions"><button class="share-plan-button" type="button" data-share-plan><span aria-hidden="true">↗</span> Поделиться</button><span data-plan-summary>0 ПУНКТОВ</span></div></div>
+        <div class="day-label"><span>СУББОТА</span><span data-weekend-saturday></span></div>
+        <ol class="itinerary-list" data-itinerary-list aria-live="polite"></ol>
+        <div class="empty-plan" data-empty-plan><span>✳</span><h3>Пока план чистый</h3><p>Добавьте первую идею, и выходные начнут складываться.</p><a href="ideas.html" class="button button-dark">Выбрать идею <span>↗</span></a></div>
+        <div class="add-plan-form">
+          <label for="custom-plan-name">Добавить свой пункт</label>
+          <div class="form-row"><input id="custom-plan-name" type="text" maxlength="70" placeholder="Например, кофе у реки"><input id="custom-plan-time" type="text" maxlength="35" placeholder="День и время"><button class="add-custom-button" type="button" data-add-custom aria-label="Добавить пункт">+</button></div>
+        </div>
+      </div>
+      <aside class="plan-note"><div class="note-top"><span>МАЛЕНЬКОЕ НАПОМИНАНИЕ</span><span aria-hidden="true">↗</span></div><h2>Оставьте место для спонтанности.</h2><p>Лучшие истории редко стоят в расписании. Не заполняйте каждую минуту.</p><div class="note-scribble" aria-hidden="true">♡</div><a href="ideas.html">Ещё идеи <span>→</span></a></aside>
+    </section>
+    <section class="group-tools" aria-label="Подготовка компании">
+      <section class="attendance-panel" aria-labelledby="attendance-title">
+        <div class="tool-heading"><div><p class="eyebrow">КОМПАНИЯ</p><h2 id="attendance-title">Кто будет?</h2></div><span class="tool-mark" aria-hidden="true">↗</span></div>
+        <div class="attendance-list" data-attendance-list></div>
+        <div class="participant-add-row"><input type="text" maxlength="36" placeholder="Имя друга" aria-label="Имя нового участника" data-participant-name><button class="participant-add-button" type="button" data-add-participant aria-label="Добавить участника">+</button></div>
+        <p class="attendance-summary" data-attendance-summary aria-live="polite"></p>
+      </section>
+      <section class="supplies-panel" aria-labelledby="supplies-title">
+        <div class="tool-heading"><div><p class="eyebrow">НЕ ЗАБЫТЬ</p><h2 id="supplies-title">Кто что берёт?</h2></div><span class="tool-mark" aria-hidden="true">✳</span></div>
+        <div class="supply-add-row">
+          <input type="text" maxlength="60" placeholder="Добавить вещь или продукт" aria-label="Новая вещь" data-supply-name>
+          <button class="supply-add-button" type="button" data-add-supply aria-label="Добавить в список">+</button>
+        </div>
+        <p class="supply-empty" data-supply-empty>Добавьте плед, перекус или что-нибудь ещё.</p>
+        <ul class="supply-list" data-supply-list aria-live="polite"></ul>
+      </section>
+      <section class="budget-panel" aria-labelledby="budget-title">
+        <div class="tool-heading"><div><p class="eyebrow">ОБЩИЕ РАСХОДЫ</p><h2 id="budget-title">Считаем бюджет</h2></div><span class="tool-mark" aria-hidden="true">₽</span></div>
+        <div class="budget-summary"><span>ИТОГО</span><strong data-budget-total>0 ₽</strong><span data-budget-share>0 ₽ на человека</span></div>
+        <div class="expense-form">
+          <input type="text" maxlength="50" placeholder="За что платим?" aria-label="Название расхода" data-expense-name>
+          <input type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="Сумма, ₽" aria-label="Сумма расхода в рублях" data-expense-amount>
+          <select aria-label="Кто заплатил" data-expense-payer></select>
+          <button class="expense-add-button" type="button" data-add-expense aria-label="Добавить расход">+</button>
+        </div>
+        <p class="expense-empty" data-expense-empty>Добавьте расходы, чтобы посчитать долю каждого.</p>
+        <ul class="expense-list" data-expense-list aria-live="polite"></ul>
+      </section>
+    </section>
+    <section class="logistics-tools" aria-label="Место встречи и поездки">
+      <section class="meeting-panel" aria-labelledby="meeting-title">
+        <div class="tool-heading"><div><p class="eyebrow">ТОЧКА СБОРА</p><h2 id="meeting-title">Где встречаемся?</h2></div><span class="tool-mark" aria-hidden="true">⌖</span></div>
+        <div class="meeting-form">
+          <input type="text" maxlength="100" placeholder="Адрес или название места" aria-label="Место встречи" data-meeting-place>
+          <div class="meeting-details-row"><label>Время <input type="time" aria-label="Время встречи" data-meeting-time></label><input type="url" placeholder="Ссылка на карту (необязательно)" aria-label="Ссылка на карту" data-meeting-url></div>
+          <button class="meeting-save-button" type="button" data-save-meeting>Сохранить место <span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="meeting-preview" data-meeting-preview hidden><strong data-meeting-preview-place></strong><span data-meeting-preview-time></span><a data-meeting-map target="_blank" rel="noopener noreferrer">Открыть точку в картах ↗</a></div>
+      </section>
+      <section class="rides-panel" aria-labelledby="rides-title">
+        <div class="tool-heading"><div><p class="eyebrow">ДОРОГА</p><h2 id="rides-title">Кто с кем едет?</h2></div><span class="tool-mark" aria-hidden="true">↗</span></div>
+        <p class="rides-intro">Отметьте водителей выше, затем распределите пассажиров.</p>
+        <div class="rides-list" data-rides-list></div>
+        <p class="rides-summary" data-rides-summary aria-live="polite"></p>
+      </section>
+    </section>
+    <section class="rain-plan-panel" aria-labelledby="rain-plan-title">
+      <div class="rain-plan-heading"><p class="eyebrow">ПЛАН Б</p><h2 id="rain-plan-title">Если пойдёт дождь</h2><p>Запасные идеи для выходных в помещении.</p></div>
+      <div class="rain-plan-content">
+        <div class="rain-plan-add-row"><input type="text" maxlength="70" placeholder="Например, боулинг или настольные игры" aria-label="Запасная идея на случай дождя" data-rain-idea><button type="button" data-add-rain-idea aria-label="Добавить запасную идею">+</button></div>
+        <p class="rain-plan-empty" data-rain-empty>План Б пока пуст. Добавьте пару идей на выбор.</p>
+        <ul class="rain-plan-list" data-rain-list aria-live="polite"></ul>
+      </div>
+    </section>
+    <section class="tasks-panel" aria-labelledby="tasks-title">
+      <div class="tasks-heading"><p class="eyebrow">ПОДГОТОВКА</p><h2 id="tasks-title">Что нужно сделать?</h2><p>Назначьте ответственного и отмечайте готовое.</p></div>
+      <div class="tasks-content">
+        <div class="task-add-row"><input type="text" maxlength="70" placeholder="Например, забронировать столик" aria-label="Новая задача" data-task-name><select aria-label="Ответственный за задачу" data-task-owner></select><button type="button" data-add-task aria-label="Добавить задачу">+</button></div>
+        <p class="tasks-empty" data-tasks-empty>Пока задач нет.</p>
+        <ul class="task-list" data-task-list aria-live="polite"></ul>
+      </div>
+    </section>
+    <footer class="ideas-footer"><span>ПЛАН ХРАНИТСЯ НА ЭТОМ УСТРОЙСТВЕ</span><button class="clear-plan" type="button" data-clear-plan>Очистить план</button></footer>
+  </main>
+  <dialog class="share-dialog" data-share-dialog aria-labelledby="share-dialog-title">
+    <div class="share-dialog-heading"><div><p class="eyebrow">ГОТОВО К ОТПРАВКЕ</p><h2 id="share-dialog-title">Ваш план на выходные</h2></div><button class="share-close" type="button" data-close-share aria-label="Закрыть">×</button></div>
+    <textarea data-share-text aria-label="Текст плана для отправки" readonly></textarea>
+    <div class="share-dialog-actions"><span data-share-status>Скопируйте и отправьте в чат компании.</span><button class="button button-dark" type="button" data-copy-share>Скопировать текст <span aria-hidden="true">↗</span></button></div>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

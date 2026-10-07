@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e8">
+  <title>Выходные вместе — План на уикенд</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body class="home-page" data-page="home">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Выходные вместе, главная"><span class="brand-spark">✳</span> ВЫХОДНЫЕ<br><span class="wordmark-indent">ВМЕСТЕ</span></a>
+    <nav class="main-nav" aria-label="Главная навигация">
+      <a class="nav-link active" href="index.html">Обзор</a>
+      <a class="nav-link" href="ideas.html">Идеи</a>
+      <a class="nav-link" href="plan.html">Наш план <span class="nav-count" data-plan-count>0</span></a>
+    </nav>
+    <a class="header-cta" href="ideas.html">Собрать компанию <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main class="page-shell home-shell">
+    <section class="home-hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> СЛЕДУЮЩИЙ УИКЕНД · <span data-weekend-range></span></p>
+        <h1>Выходные<br>не <span>случаются.</span><br>Их придумывают.</h1>
+        <p class="hero-intro">Один общий план, десять хороших идей и ни одного «ну, не знаю». Что делаем вместе?</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="ideas.html">Выбрать занятие <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="plan.html">Открыть наш план <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="friend-row" aria-label="Участники компании">
+          <div class="avatar-stack"><span class="avatar avatar-coral">А</span><span class="avatar avatar-blue">М</span><span class="avatar avatar-lime">Л</span><span class="avatar avatar-violet">И</span></div>
+          <p><strong>10 друзей</strong><br>уже в деле</p>
+          <button class="invite-button" type="button" data-invite>+ Пригласить</button>
+        </div>
+      </div>
+      <div class="hero-photo" role="img" aria-label="Друзья вместе проводят выходной на природе">
+        <div class="photo-caption"><span>ИДЕАЛЬНЫЙ ПЛАН</span><strong>Никакого «как хотите»</strong></div>
+        <span class="photo-sticker">СУББОТА<br>НА УРА!</span>
+      </div>
+      <div class="hero-side-note">ХОРОШИЕ ПЛАНЫ<br>ДЕЛАЮТСЯ ВМЕСТЕ <span>↘</span></div>
+    </section>
+
+    <section class="dashboard-section" aria-labelledby="weekend-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">ВАШ УИКЕНД</p><h2 id="weekend-title">С чего начнём?</h2></div>
+        <span class="small-note">Обновляется для всей компании</span>
+      </div>
+      <div class="dashboard-grid">
+        <a class="dashboard-card ideas-card" href="ideas.html">
+          <span class="card-index">01 / НАЙТИ ИДЕЮ</span><span class="card-icon" aria-hidden="true">✳</span>
+          <h3>Чем займёмся?</h3><p>Подобрали идеи для шумной компании и спокойного дня.</p>
+          <span class="card-bottom">Смотреть идеи <b>↗</b></span>
+        </a>
+        <a class="dashboard-card plan-card" href="plan.html">
+          <span class="card-index">02 / СОБРАТЬ ПЛАН</span><span class="card-icon" aria-hidden="true">▤</span>
+          <h3>Наш маршрут</h3><p><strong data-plan-count>0</strong> пунктов уже добавлено в общий план.</p>
+          <span class="card-bottom">Открыть план <b>↗</b></span>
+        </a>
+        <div class="dashboard-card question-card">
+          <span class="card-index">03 / ВЫБРАТЬ ВМЕСТЕ</span><span class="card-icon" aria-hidden="true">♡</span>
+          <h3>Решаем голосованием</h3><p>Лайкните идею в каталоге. Победит та, за которую больше голосов.</p>
+          <span class="card-bottom">Голосовать в идеях <b>↗</b></span>
+        </div>
+      </div>
+    </section>
+    <section class="tiny-footer"><span>СДЕЛАНО ДЛЯ ВСТРЕЧ, КОТОРЫЕ НЕ ХОЧЕТСЯ ОТМЕНЯТЬ</span><span>ВАША КОМПАНИЯ · ВАШИ ПРАВИЛА</span></section>
+  </main>
+</body>
+</html>
